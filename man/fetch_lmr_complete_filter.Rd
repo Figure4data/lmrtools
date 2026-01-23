@@ -2,14 +2,14 @@
 % Please edit documentation in R/database_functions.R
 \name{fetch_lmr_complete_filter}
 \alias{fetch_lmr_complete_filter}
-\title{fetch complete lmr data with optional filters
+\title{fetch complete lmr data with optional filters (using short names)
 includes quarter info and short names; optionally, short names can replace originals}
 \usage{
 fetch_lmr_complete_filter(
   replace = FALSE,
-  cat_type = NULL,
-  category = NULL,
-  subcategory = NULL,
+  cat_type_short = NULL,
+  category_short = NULL,
+  subcategory_short = NULL,
   min_end_qtr_dt = NULL,
   max_end_qtr_dt = NULL
 )
@@ -17,11 +17,11 @@ fetch_lmr_complete_filter(
 \arguments{
 \item{replace}{Logical - replace original category names with short names}
 
-\item{cat_type}{Character string of category type (default: NULL)}
+\item{cat_type_short}{Character string of category type short name (default: NULL)}
 
-\item{category}{Character string of category (default: NULL)}
+\item{category_short}{Character string of category short name (default: NULL)}
 
-\item{subcategory}{Character string of subcategory (default: NULL)}
+\item{subcategory_short}{Character string of subcategory short name(default: NULL)}
 
 \item{min_end_qtr_dt}{date YYYY-MM-DD (default: NULL)}
 
@@ -31,6 +31,6 @@ fetch_lmr_complete_filter(
 A data frame of the requested table data
 }
 \description{
-fetch complete lmr data with optional filters
+fetch complete lmr data with optional filters (using short names)
 includes quarter info and short names; optionally, short names can replace originals
 }
