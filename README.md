@@ -58,6 +58,7 @@ It is expected the package will evolve. Main steps in updating (as far as I unde
 10. Push to Github repo to make available on other computers.
 11. install updates in projects with `devtools::install_github('jyuill/lmrtools')`
     1.  normally not needed on computer where library is being developed, since `devtools:install()` takes care of local machine.
+    2.  sometimes needed if version changes, creates conflict with shiny app publishing
 
 ## Viewing Documentation
 
