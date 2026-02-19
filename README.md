@@ -93,10 +93,10 @@ To ensure library is included with Shiny app.
 
 #### After updates to package:
 
-If version number (or maybe other major meta data, new packages) is changed, Posit Connect Cloud may have issues.
+If version number is changed (or maybe other major meta data, new packages added), Posit Connect Cloud may have issues.
 
 -   in Shiny app folder: `rsconnect::writeManifest("<app directory">)`.
--   OR: can open manifest.json > search 'lmrtools' and update manually.
+-   OR: can open manifest.json in Shiny app folder > search 'lmrtools' and update manually.
 -   Push to Github.
 
 #### Credentials for Posit Connect Cloud deployment
