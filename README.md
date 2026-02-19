@@ -6,7 +6,7 @@ An R package for working with Figure 4 LMR database. The main purpose is for **s
 
 \``devtools::install_github("jyuill/lmrtools")`\`
 
-> will need to reinstall any time there are updates.
+> will need to reinstall any time there are updates (other than on computer where package is being developed)
 
 Also need **credential management**, discussed below.
 
@@ -31,9 +31,9 @@ These are available from the **local version of package repo** (NOT Github) or s
 
 ## Usage
 
-Once installed, refer to `lmrtools::` to see available functions.
+Once installed, refer to `lmrtools::` to see available functions OR `help(package = 'lmrtools')` for documentation.
 
-**database_functions.R**: notable ones focused on database operations:
+**database_functions.R**: notable functions focused on database operations:
 
 -   `list_tables()` : all the tables for LMR, indeed everything in the Figure 4 database
 -   `fetch_db_basic()` : query any table in the database; defaults to lmr_data
