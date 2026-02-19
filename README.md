@@ -53,10 +53,11 @@ It is expected the package will evolve. Main steps in updating (as far as I unde
 5.  `devtools::use_package('<pkg name>')` if new packages are needed.
     1.  add package name to DESCRIPTION file
 6.  `devtools::document()` to update documentation; any time new functions added, new packages used.
-7.  `devtools::load_all()` to test locally.
-8.  `devtools::check()` to run diagnostics -\> address issues as needed.
-9.  `devtools::install()` in DESCRIPTION: manually update version number, then install new version on computer.
-10. Push to Github repo to make available on other computers.
+7.  **`devtools::load_all()`** to test locally.
+8.  **`devtools::check()`** to run diagnostics -\> address issues as needed.
+9.  in DESCRIPTION: manually update version number
+9.  **`devtools::install()`** to install new version on computer; should be available for any projects.
+10. **Push to Github** repo to make available on other computers.
 11. install updates in projects with `devtools::install_github('jyuill/lmrtools')`
     1.  normally not needed on computer where library is being developed, since `devtools:install()` takes care of local machine.
     2.  sometimes needed if version changes, creates conflict with shiny app publishing
