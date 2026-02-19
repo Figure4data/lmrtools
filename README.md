@@ -88,7 +88,7 @@ To ensure library is included with Shiny app.
 #### Console: (first time setup)
 
 -   in Shiny app folder: `rsconnect::writeManifest(appDir="<app directory if not project root>")`
--   creates a **manifest.json** file in app directory, to be pushed to Github.
+-   creates a **manifest.json** file in Shiny app directory, to be pushed to Github.
 -   **lmrtools** will be included in references to ALL needed packages, including full meta data info.
 
 #### After updates to package:
