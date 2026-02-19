@@ -6,7 +6,7 @@ An R package for working with Figure 4 LMR database. The main purpose is for **s
 
 \``devtools::install_github("jyuill/lmrtools")`\`
 
-> will need to reinstall any time there are updates (other than on computer where package is being developed)
+> will need to reinstall when there are updates (except computer where package is being developed)
 
 Also need **credential management**, discussed below.
 
@@ -27,7 +27,7 @@ These are available from the **local version of package repo** (NOT Github) or s
     -   "project" in case just want to apply to individual project for some reason
 -   paste into **.Renviron** file that pops up (or may have to type if copy/paste doesn't work)
 -   **.Renviron** file now available in repo
--   *ENSURE to add .Renviron to .gitignore*
+> *ENSURE to add .Renviron to .gitignore*
 
 ## Usage
 
@@ -56,7 +56,7 @@ It is expected the package will evolve. Main steps in updating (as far as I unde
 7.  **`devtools::load_all()`** to test locally.
 8.  **`devtools::check()`** to run diagnostics -\> address issues as needed.
 9.  in DESCRIPTION: manually update version number
-9.  **`devtools::install()`** to install new version on computer; should be available for any projects.
+9.  **`devtools::install()`** to install new version on computer; should be available for any projects, although may need to close/restart project.
 10. **Push to Github** repo to make available on other computers.
 11. install updates in projects with `devtools::install_github('jyuill/lmrtools')`
     1.  normally not needed on computer where library is being developed, since `devtools:install()` takes care of local machine.
