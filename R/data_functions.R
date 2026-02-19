@@ -27,8 +27,12 @@ aggregate_annual_cat_type <- function(dataset, dataset_all=beer_data) {
               dplyr::summarize(netsales = sum(netsales),
                         litres = sum(litres)) |> 
                 #ungroup() |>
-              dplyr::mutate(yoy_sales = (netsales - dplyr::lag(netsales))/dplyr::lag(netsales),
-                    yoy_litres = (litres - dplyr::lag(litres))/dplyr::lag(litres))
+              dplyr::mutate(
+                    yoy_sales = (netsales - dplyr::lag(netsales))/dplyr::lag(netsales),
+                    yoy_litres = (litres - dplyr::lag(litres))/dplyr::lag(litres),
+                    # adding differences in abs values - using _amt suffix since existing variables widely used
+                    yoy_sales_amt = (netsales - dplyr::lag(netsales)),
+                    yoy_litres_amt = (litres - dplyr::lag(litres)))
   # add percent of totals for each category type
   # - join totals to category data set and calculate percentages
   dataset <- dplyr::left_join(dataset, dataset_yr, by=c("cyr")) |>
@@ -63,9 +67,13 @@ aggregate_qtr_cat_type <- function(dataset, n_qtr=4) {
               litres = sum(litres)) %>% ungroup() %>%
     mutate(qoq_sales = (netsales - lag(netsales))/lag(netsales),
            qoq_litres = (litres - lag(litres))/lag(litres),
+           qoq_sales_amt = (netsales - lag(netsales)),
+           qoq_litres_amt = (litres - lag(litres)),
            # for same qtr prev yr comparisons
            yoy_qoq_sales = (netsales - lag(netsales, n=n_qtr))/lag(netsales, n=n_qtr),
            yoy_qoq_litres = (litres - lag(litres, n=n_qtr))/lag(litres, n=n_qtr),
+           yoy_qoq_sales_amt = (netsales - lag(netsales, n=n_qtr)),
+           yoy_qoq_litres_amt = (litres - lag(litres, n=n_qtr)),
            yr_qtr = paste(cyr, cqtr, sep = "-")
     )
   return(dataset)
@@ -104,6 +112,8 @@ aggregate_annual_cat_subcat <- function(dataset, high_cat, low_cat, dataset_all)
     group_by(cyr, !!sym(high_cat), !!sym(low_cat)) %>% ungroup() %>%
     mutate(yoy_sales = (netsales - lag(netsales, n=n_lag))/lag(netsales, n=n_lag),
            yoy_litres = (litres - lag(litres, n=n_lag))/lag(litres, n=n_lag),
+           yoy_sales_amt = (netsales - lag(netsales, n=n_lag)),
+           yoy_litres_amt = (litres - lag(litres, n=n_lag)),
           # order cat_type by sales
            category = reorder(category, netsales, FUN = sum)
     ) %>% ungroup()
@@ -150,8 +160,12 @@ aggregate_qtr_cat_subcat <- function(dataset, high_cat, low_cat) {
     ungroup() %>%
     mutate(qoq_sales = (netsales - lag(netsales, n=n_lag))/lag(netsales, n=n_lag),
            qoq_litres = (litres - lag(litres, n=n_lag))/lag(litres, n_lag),
+           qoq_sales_amt = (netsales - lag(netsales, n=n_lag)),
+           qoq_litres_amt = (litres - lag(litres, n=n_lag)),
            yoy_qoq_sales = (netsales - lag(netsales, n=n_lag*n_qtr))/lag(netsales, n=n_lag*n_qtr),
            yoy_qoq_litres = (litres - lag(litres, n=n_lag*n_qtr))/lag(litres, n=n_lag*n_qtr),
+           yoy_qoq_sales_amt = (netsales - lag(netsales, n=n_lag*n_qtr)),
+           yoy_qoq_litres_amt = (litres - lag(litres, n=n_lag*n_qtr)),
            yr_qtr = paste(cyr, cqtr, sep = "-")
     )
   
