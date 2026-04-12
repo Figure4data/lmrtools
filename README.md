@@ -4,7 +4,7 @@ An R package for working with Figure 4 LMR database. The main purpose is for **s
 
 ## Installation
 
-\``devtools::install_github("jyuill/lmrtools")`\`
+\``devtools::install_github("Figure4data/lmrtools")`\`
 
 > will need to reinstall when there are updates (except computer where package is being developed)
 
