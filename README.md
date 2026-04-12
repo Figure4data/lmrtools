@@ -58,7 +58,7 @@ It is expected the package will evolve. Main steps in updating (as far as I unde
 9.  in DESCRIPTION: manually update version number
 9.  **`devtools::install()`** to install new version on computer; should be available for any projects, although may need to close/restart project.
 10. **Push to Github** repo to make available on other computers.
-11. install updates in projects with `devtools::install_github('jyuill/lmrtools')`
+11. install updates in projects with `devtools::install_github('Figure4data/lmrtools')`
     1.  normally not needed on computer where library is being developed, since `devtools:install()` takes care of local machine.
     2.  sometimes needed if version changes, creates conflict with shiny app publishing
 
