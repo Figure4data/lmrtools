@@ -2,6 +2,8 @@
 
 An R package for working with Figure 4 LMR database. The main purpose is for **standardized queries to the database for purposes of reporting and analysis** in different contexts.
 
+Now part of Figure 4 Data Products.
+
 ## Installation
 
 \``devtools::install_github("Figure4data/lmrtools")`\`
