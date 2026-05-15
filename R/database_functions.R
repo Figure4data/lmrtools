@@ -13,6 +13,17 @@ list_tables <- function() {
   return(tables)
 }
 
+#' get max date in the LMR database
+#' @return A date object of the max end_qtr_dt in the LMR database
+#' @export
+get_max_date <- function() {
+  con <- get_con() ## use connection function
+  max_date <- DBI::dbGetQuery(con, "SELECT MAX(end_qtr_dt) AS max_date FROM public.lmr_quarters;")$max_date
+  ## always disconnect when done
+  DBI::dbDisconnect(con)
+  return(as.Date(max_date))
+}
+
 #' fetch any lmr (fig4)table data - uses new dbx_get_con function for ease of use
 #' defaults to main data table
 #' use for: quick fetch any raw table

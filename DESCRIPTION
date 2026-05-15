@@ -1,6 +1,6 @@
 Package: lmrtools
 Title: Tools for managing Figure 4 LMR database
-Version: 1.1.0
+Version: 1.2.0
 Authors@R: 
     person("John", "Yuill", , "john@fig4.com", role = c("aut", "cre"))
 Description: Collection of tools for accessing LMR database. Includes functions for
@@ -10,7 +10,6 @@ Depends: R (>= 4.0.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3
 Imports: 
     DBI,
     dplyr,
@@ -26,3 +25,4 @@ Imports:
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Config/roxygen2/version: 8.0.0
