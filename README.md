@@ -7,6 +7,10 @@ Now part of Figure 4 Data Products.
 ## Installation
 
 \``devtools::install_github("Figure4data/lmrtools")`\`
+or
+\``remotes::install_github("Figure4data/lmrtools")`\`
+
+(do not try 'install.packages' with GitHub URL - will likely get error about version of R)
 
 > will need to reinstall when there are updates (except computer where package is being developed)
 
