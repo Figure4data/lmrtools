@@ -47,7 +47,9 @@ Once installed, refer to `lmrtools::` to see available functions OR `help(packag
     - queries raw **lmr_data table JOINED with additional quarter info and short name versions** of category type, category, and subcategory names. 
     - PLUS (optionally), can filter by category type, category, subcategory or date range (end of quarter date).
     -   using **parameter replace=TRUE** in the function results in short names for category type, category, subcategory replacing original names in the same fields, so you can use the clean field names (also helps backward compatibility).
-    - example: `lmr_data <- fetch_lmr_complete_filter(replace = TRUE)`
+    - example: 
+        - `lmr_data <- fetch_lmr_complete_filter(replace = TRUE)`
+        - `beer_data <- fetch_lmr_complete_filter(cat_type = "BEER", replace = TRUE)`
 
 **data_functions.R**: Growing set of functions for data manipulation after queried from database: - `aggregate_annual_cat_type()`: aggregate data by category type and year, with a set of calculated fields such as year-over-year changes; replaces AnnualCatTypeData used in bc-lmr-data-products. - `aggregate_qtr_cat_type()`: same but quarterly aggregration. - `aggregate_annual_cat_subcat()`: annual aggregation by category and/or subcategory. also available at quarter level.
 
